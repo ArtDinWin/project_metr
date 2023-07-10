@@ -9,7 +9,6 @@ export default class Filter {
       const response = await fetch(queryString); // получили промис
       const data = await response.json(); // перевели в json
       this.params = await data;
-      //   console.log(this.params);
     } catch (error) {
       alert(error);
     }
@@ -21,7 +20,6 @@ export default class Filter {
       const response = await fetch(queryString); // получили промис
       const data = await response.json(); // перевели в json
       this.result = await data;
-      console.log("result", this.result);
     } catch (error) {
       alert(error);
     }

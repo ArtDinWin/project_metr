@@ -1,3 +1,5 @@
+import formatNumber from "./../utils/formatNumber";
+
 export function render() {
   const markup = `<div class="cards-wrapper">
                     <div class="container p-0 pt-5">                    
@@ -37,10 +39,14 @@ export function renderCard(object, isFaved) {
                                 <div class="card__desc">
                                     <div class="card__price">
                                         <div class="card__price-total">
-                                            ${object.price_total} ₽
+                                            ${formatNumber(
+                                              object.price_total
+                                            )} ₽
                                         </div>
                                         <div class="card__price-per-meter">
-                                            ${object.price_sq_m} ₽/м2
+                                            ${formatNumber(
+                                              object.price_sq_m
+                                            )} ₽/м2
                                         </div>
                                     </div>
 

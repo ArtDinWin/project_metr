@@ -1,10 +1,12 @@
+import formatNumber from "./../utils/formatNumber";
+
 export function render(object, isFaved) {
   const appContainer = document.querySelector("#app");
   const markup = `<div class="container p-0 pt-5">
                 <div class="heading-1">
-                    ${object.title}, ${object.square} м2 за ${
+                    ${object.title}, ${object.square} м2 за ${formatNumber(
     object.price_total
-  } ₽
+  )} ₽
                 </div>
 
                 <!-- object -->
@@ -84,14 +86,14 @@ export function render(object, isFaved) {
                                 <div
                                     class="details__value details__value--price"
                                 >
-                                    ${object.price_total} ₽
+                                    ${formatNumber(object.price_total)} ₽
                                 </div>
                             </div>
                             <div class="details__row">
                                 <div class="details__name">Цена за м2</div>
-                                <div class="details__value">${
+                                <div class="details__value">${formatNumber(
                                   object.price_sq_m
-                                } ₽/м2</div>
+                                )} ₽/м2</div>
                             </div>
                             <div class="details__row">
                                 <div class="details__name">Площадь</div>

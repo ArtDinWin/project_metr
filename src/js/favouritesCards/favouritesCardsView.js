@@ -1,3 +1,5 @@
+import formatNumber from "./../utils/formatNumber";
+
 function renderContainer() {
   const markup = `
         <div class="container p-0 mb-5">
@@ -19,7 +21,9 @@ function renderCard(object) {
 
   const markup = `<article class="col-md-4">
                         <!-- card -->
-                        <a href="#/item/${object.id}" class="card" data-id="${object.id}">
+                        <a href="#/item/${object.id}" class="card" data-id="${
+    object.id
+  }">
                             <div class="card__header">
                                 <div class="card__title">
                                     ЖК ${object.complex_name}
@@ -29,15 +33,17 @@ function renderCard(object) {
                                 </div>
                             </div>
                             <div class="card__img">
-                                <img src="${object.image}" alt="План квартиры" />
+                                <img src="${
+                                  object.image
+                                }" alt="План квартиры" />
                             </div>
                             <div class="card__desc">
                                 <div class="card__price">
                                     <div class="card__price-total">
-                                        ${object.price_total} ₽
+                                        ${formatNumber(object.price_total)} ₽
                                     </div>
                                     <div class="card__price-per-meter">
-                                        ${object.price_sq_m} ₽/м2
+                                        ${formatNumber(object.price_sq_m)} ₽/м2
                                     </div>
                                 </div>
 
@@ -47,20 +53,26 @@ function renderCard(object) {
                                         <div class="params__definition">
                                             Комнат
                                         </div>
-                                        <div class="params__value">${object.rooms}</div>
+                                        <div class="params__value">${
+                                          object.rooms
+                                        }</div>
                                     </div>
                                     <div class="params__item">
                                         <div class="params__definition">
                                             Площадь
                                         </div>
-                                        <div class="params__value">${object.square}</div>
+                                        <div class="params__value">${
+                                          object.square
+                                        }</div>
                                     </div>
                                 </div>
                                 <!-- //card__params params -->
                             </div>
                             <div class="card__footer">
                                 <div class="card__art">${object.scu}</div>
-                                <div class="card__floor">Этаж ${object.floor} из ${object.floors_total}</div>
+                                <div class="card__floor">Этаж ${
+                                  object.floor
+                                } из ${object.floors_total}</div>
                             </div>
                         </a>
                         <!-- // card -->
